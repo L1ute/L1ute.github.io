@@ -165,6 +165,36 @@
             
 
 <div class="post">
+    <a href="/2023/03/24/%E9%9D%92%E5%B0%91%E5%B9%B4Simper-xor/">
+        <h2 class="post-title">青少年Simper xor</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/3/24
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>这是青少年ctf上的一个题，下面是我对这个图的分析<br>![[QQ截图20230324004558.png]]</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+    </div>
+    <a href="/2023/03/24/%E9%9D%92%E5%B0%91%E5%B9%B4Simper-xor/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="/2023/03/14/Recent-learning-status/">
         <h2 class="post-title">Recent learning status</h2>
     </a>
@@ -214,12 +244,26 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <h1 id="第一章：漫游计算机系统"><a href="#第一章：漫游计算机系统" class="headerlink" title="#第一章：漫游计算机系统"></a>#第一章：漫游计算机系统</h1><p> 信息：信息为位+上下文。<br> 编译系统：由预处理器、编译器、汇编器、链接器四个程序组成。<br> .c–预处理器–&gt;.i–编译器–&gt;.s–汇编器–&gt;.o++连接器++printf.o–&gt;可执行目标程序</p>
-<p> 处理器读并结束储存在内存中的指令。在这个过程中要用到一个shell应用程序。<br> shell：：<strong>命令行解释器</strong>，他的作用就是：将使用者的命令翻译给核心处理，同时将核心的处理结果翻译给使用者。</p>
-<p> 系统硬件组成：总线、I&#x2F;O设备、主存、处理器<br> 总线：携带信息字节并负责在各个部件间传递。</p>
-<p> I&#x2F;O设备：是系统与外部世界的联系通道。每个I&#x2F;O设备都通过一个控制器或适配器与I&#x2F;O总线相连。</p>
-<p> 主存：<strong>是一个临时存储设备，在处理器执行程序是，用来存放程序和程序处理的数据</strong>。从物理上来看，主存由一组动态随机存储器(DRAM)芯片组成；从逻辑上来看，存储器是一个线性的字节数组。</p>
-<p> 处理器：<strong>中央处理单元(CPU)，是解释(或执行)存储在主存中指令的引擎</strong>。其核心是大小为一个字的存储设备(寄存器)，称为程序计数器(PC)。</p>
+            <h1 id="第一章：漫游计算机系统"><a href="#第一章：漫游计算机系统" class="headerlink" title="#第一章：漫游计算机系统"></a>#第一章：漫游计算机系统</h1><p><strong>信息</strong>：信息为位+上下文。<br><strong>编译系统</strong>：由预处理器、编译器、汇编器、链接器四个程序组成。<br><em><strong>.c–预处理器–&gt;.i–编译器–&gt;.s–汇编器–&gt;.o++连接器++printf.o–&gt;可执行目标程序</strong></em></p>
+<p>处理器读并结束储存在内存中的指令。在这个过程中要用到一个shell应用程序。<br><strong>shell</strong>：：<strong>命令行解释器</strong>，他的作用就是：将使用者的命令翻译给核心处理，同时将核心的处理结果翻译给使用者。</p>
+<p>系统硬件组成：总线、I&#x2F;O设备、主存、处理器<br>总线：携带信息字节并负责在各个部件间传递。</p>
+<p><strong>I&#x2F;O设备</strong>：是系统与外部世界的联系通道。每个I&#x2F;O设备都通过一个控制器或适配器与I&#x2F;O总线相连。</p>
+<p><strong>主存</strong>：<strong>是一个临时存储设备，在处理器执行程序是，用来存放程序和程序处理的数据</strong>。从物理上来看，主存由一组动态随机存储器(DRAM)芯片组成；从逻辑上来看，存储器是一个线性的字节数组。</p>
+<p><strong>处理器</strong>：<strong>中央处理单元(CPU)，是解释(或执行)存储在主存<br>中指令的引擎</strong>。其核心是大小为一个字的存储设备(寄存器)，称为程序计数器(PC)。</p>
+<p><strong>高速缓存存储器</strong>大大加快cpu的处理速度；L1和L2高速缓存<br>用一种叫做静态随机访问存储器(SRAM)的硬件技术实现的。</p>
+<p><strong>软件</strong>：应用程序和操作系统。<br>操作系统可以看成是应用程序和硬件之间的一层软件。</p>
+<p><strong>文件*是对</strong>I&#x2F;O<strong>设备的抽象表示，虚拟内存是对主存和磁盘</strong>I&#x2F;O<strong>设备的抽象表示，进程则是对处理器、主存和</strong>I&#x2F;O**设备的抽象表示。</p>
+<p><strong>进程</strong>是操作系统对一个正在运行的程序的一种抽象。<br>程序看上去是独占地使用处理器、主存和<strong>I&#x2F;O</strong>设备；CPU会在多个进程来回切换，这种机制被称为上下文切换。<br>从一个进程到另一个进程的转换是由操作系统内核管理的，内核是操作系统代码常驻主存的部分；内核不是一个独立的进程，相反，它是系统管理全部进程所用代码和数据结构的集合。</p>
+<p><strong>线程</strong>：一个进程可有多个称为线程的执行单元组成，每个线程都运行在进程的上下文中。</p>
+<p><strong>虚拟内存</strong>：是一个抽象概念，它为每个进程提供一个假象，即每个进程都在独占地使用主存。</p>
+<p>每个进程看到的内存都是一致的的，称为<strong>虚拟地址空间</strong>（详情见p13）。<br>虚拟地址空间又很多个区域：程序代码和数据、堆、共享库、栈、内核虚拟内存。</p>
+<p><strong>文件</strong>就是字节序列。每个<strong>I&#x2F;O</strong>设备，包括磁盘、键盘、显示器、甚至网络，都能看成文件</p>
+<p><strong>系统</strong>被视为一个孤立的硬件和软件的集合体。</p>
+<p><strong>术语并发</strong>：指一个同时具有多个活动的系统；<br><strong>术语并行</strong>：指的是用并发来使一个系统运行得更快。</p>
+<p><strong>多核处理器</strong>是将多个CPU集成到一个集成电路芯片上。</p>
+<p><strong>超线程</strong>：是一项允许一个CPU执行多个控制流的技术。</p>
+<p><strong>指令级并行</strong>：现代处理器指同时执行多条指令的属性；</p>
+<p><strong>单指令、多数据（SIMD并行）并行</strong>：许多现代处理器拥有特殊的硬件，允许一条指令产生多个可以并行执行的操作。</p>
 <h1 id="第二章：信息的表示和处理"><a href="#第二章：信息的表示和处理" class="headerlink" title="#第二章：信息的表示和处理"></a>#第二章：信息的表示和处理</h1>
             
         </div>
