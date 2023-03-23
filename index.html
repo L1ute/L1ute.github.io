@@ -182,7 +182,42 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>这是青少年ctf上的一个题，下面是我对这个图的分析<br>![[QQ截图20230324004558.png]]</p>
+            <p>这是青少年ctf上的一个题，下面是我对这个图的分析<br><img src="/2023/03/24/%E9%9D%92%E5%B0%91%E5%B9%B4Simper-xor/QQ%E6%88%AA%E5%9B%BE20230324004558.png"></p>
+<p>接下来就是脚本咯：</p>
+<pre><code class="c">#include&lt;stdio.h&gt;
+int main()
+&#123;
+    char v3[]=&quot;a7shw9o10e63nfi19dk&quot;;
+    char compare_date[]=&#123;&#39;G&#39;,&#39;d&#39;,&#39;\x18&#39;,&#39;3&#39;,&#39;\x10&#39;,&#39;a&#39;,&#39;Q&#39;,&#39;;&#39;,&#39;5&#39;,&#39;^&#39;,&#39;c&#39;,&#39;d&#39;,&#39;\x1D&#39;,&#39;t&#39;,&#39;\x19&#39;,&#39;M&#39;,&#39;`&#39;,&#39;\x1B&#39;,&#39;i&#39;&#125;;
+    char v7[19];
+    char buffer1[18];
+    char buffer2[19];
+    char flag[19]=&quot;Huan-y1n5&quot;;//先根据第一个循环求前9个
+    for(int k=1;k&lt;=18;k++)
+    &#123;
+        v3[k] ^= flag[(k - 1) % 9] ^ flag[(k - 1) % 7] ^ v3[k - 1];
+    &#125;
+    for(int i=0;i&lt;=18;i++)
+    &#123;
+        v7[i]=compare_date[i]^v3[i];
+    &#125;
+    buffer2[0]=&#39;I&#39;;
+    for(int i=0;i&lt;18;i++)//这里求出最开始v7的前8个
+    &#123;
+        buffer2[i+1]=buffer2[i]^v7[i]^0x53;
+    &#125;
+    for (int i = 1; i &lt; 19; ++i )
+    &#123;
+        flag[i]=buffer2[i]^buffer2[i-1];
+    &#125;
+    for (int i = 0; i &lt; 19; ++i )
+    &#123;
+        printf(&quot;%c&quot;,flag[i]);
+    &#125;
+ return 0;
+&#125;
+</code></pre>
+<p>在这个题目中要注意的是先根据v3求出flag的前九个字符，然后写脚本。</p>
 
             
         </div>
